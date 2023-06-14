@@ -1,0 +1,36 @@
+<ion-content>
+  <div class="contenedor-principal">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="0" size-xs="0" size-sm="0" size-lg="1"></ion-col>
+        <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="10" class="ion-align-self-center">
+          <div class="fondo-azul">
+            <ion-row style="margin-top: 3%; margin-bottom: 3%;">
+              <ion-col size="12" size-sm="12" size-md="12" size-lg="12" class="ion-text-center">
+                <ion-title style="text-transform: uppercase;">
+                  <strong>
+                    {{'mobile.generics.Rubro'| translate}}
+                  </strong>
+                </ion-title>
+              </ion-col>
+            </ion-row>
+            <!-- components -->
+            <ion-card *ngFor="let credit of creditsUser" (click)="CheckHeading(credit)"
+              onKeyDown="CheckHeading(credit)">
+              <ion-card-header *ngIf="credit.tipoRubro!='0'">
+                <ion-card-title>
+                  <strong>{{'mobile.generics.Description'| translate}}</strong>{{credit.descripcionRubro }}
+                </ion-card-title>
+                <ion-card-title>
+                  <strong>{{'mobile.generics.Amount'| translate}}</strong>
+                  {{credit.montoDesembolso | currency}}
+                </ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </div>
+        </ion-col>
+        <ion-col size-md="0" size-xs="0" size-sm="0" size-lg="1"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
